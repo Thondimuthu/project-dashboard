@@ -27,7 +27,7 @@ import Xlpopup from '../Components/Popup-Components/XLPopup.jsx';
 
 
 const sidebarLinks = [
-  { to: '/home', label: 'Home', icon: <Homeicon /> },
+  { to: '/home', label: 'Home', icon:<Homeicon />  },
   { to: '/inbox', label: 'Inbox', icon: <Inboxicon /> },
 
   { to: '/everythink', label: 'Everything', icon: < EverythinkIcon/>},
@@ -40,9 +40,9 @@ const Sidebar = () => {
   return (
     <div className="border border-gray-200  w-96 max-h-screen overflow-y-auto mt-2 rounded-lg shadow-md">
       <div className="flex flex-col p-2">
+
         <div className="border border-b-2 border-t-0 border-l-0 border-r-0">
-          
-          {sidebarLinks.slice(0, 3).map((item, index) => (
+          { sidebarLinks.slice(0, 2).map((item, index) => (
             <NavLink
             
               key={index}
@@ -74,7 +74,7 @@ const Sidebar = () => {
         </div>
 
         <div className=" ">
-          {sidebarLinks.slice(3).map((item, index) => (
+          {sidebarLinks.slice(2).map((item, index) => (
             <Link
               key={index}
               to={item.to}
