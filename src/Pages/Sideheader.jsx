@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Profile from '../Components/Header/Profile.jsx';
 import Search from '../Components/Header/Search.jsx';
 import Note from '../Components/Header/Note.jsx';
@@ -8,11 +8,13 @@ function NavHeader() {
 
     // Define a list of action items
     const actionItems = [
-        { id: 1, component: <Notification /> },
-        { id: 2, component: <Note/> },
+        { id: 1, component: <Note/> },
+        { id: 2, component: <Notification /> },
         { id: 3, component: <Profile /> },
     ];
-
+    // const handleOpenItem = (id) => {
+    //     setActiveItemId(id === activeItemId ? null : id);
+    // }
     return (
         <nav className="bg-indigo-800 h-16 p-3 shadow-sm flex flex-wrap justify-between items-center">
             {/* Logo Section */}
@@ -32,7 +34,7 @@ function NavHeader() {
             <div className="flex items-center">
                 <div className='mr-28'><Search/></div>
                 {actionItems.map((item) => (
-                    <div className='ml-5' key={item.id}>{item.component}</div>
+                    <button  className='ml-5' key={item.id} onClick={handleOpenItem}>{item.component}</button>
                 ))}
             </div>
         </nav>

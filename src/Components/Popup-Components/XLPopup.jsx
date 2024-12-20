@@ -197,7 +197,7 @@ function Xlpopup() {
 
                         <div className="">
                             <div className="p-3">
-                                <div className=" flex justify-between p-2 border border-red-500">
+                                <div className=" flex justify-between p-2">
                                     <div className="  text-center">
                                         <lebal className=" text-sm  ">
                                             <p>Rerum ten Eveniet cupiditate</p>
@@ -211,31 +211,36 @@ function Xlpopup() {
                                         />
                                     </div>
                                     {/* this is New excel sheet adding part */}
-                                    <div className="text-center  mr-10 ">
+                                    <div className="text-center mr-10">
                                         <button
                                             onClick={() => setShowSheetInput(!showSheetInput)}
-                                            className="bg-purple-500 text-white py-2 px-6 rounded-md hover:bg-purple-600"
+                                            className="bg-purple-500 text-white py-1 px-4   rounded-md hover:bg-purple-600"
                                         >
-                                            {showSheetInput ? 'Cancel' : 'Add New Sheet'}
+                                            {showSheetInput ? 'Cancel' :
+                                                'Add New Sheet'}
                                         </button>
 
                                         {showSheetInput && (
                                             <div className="mt-4 flex justify-center gap-4">
+                                                <div className="">
                                                 <input
                                                     type="text"
                                                     value={newSheetName}
                                                     onChange={(e) => setNewSheetName(e.target.value)}
                                                     placeholder="Enter new sheet name"
-                                                    className="p-2 text-lg border border-gray-300 rounded-md outline-none"
+                                                    className=" pl-4 text-lg h-10 border border-gray-300 rounded-md outline-none border-b-2 border-t-0 border-r-0"
                                                 />
+                                                </div>
 
 
+                                                <div className="pt-1">
                                                 <button
                                                     onClick={handleAddSheet}
-                                                    className="bg-orange-500 text-white py-2 px-6 rounded-md hover:bg-orange-600"
+                                                    className="bg-orange-500 py-1 px-4 text-white rounded-md hover:bg-orange-600 "
                                                 >
                                                     Add Sheet
                                                 </button>
+                                                </div>
                                             </div>
                                         )}
                                     </div>
@@ -243,7 +248,7 @@ function Xlpopup() {
 
 
                                 {/* this is container in div02 */}
-                                <div className=" mt-3  flex justify-between border border-blue-800">
+                                <div className=" mt-3  flex justify-between ">
                                     {/* delete Button */}
                                     <div className="  p-2">
                                         <button
@@ -261,7 +266,7 @@ function Xlpopup() {
                                             value={newColumnTitle}
                                             onChange={(e) => setNewColumnTitle(e.target.value)}
                                             placeholder="Enter new column title"
-                                            className="p-1 text-lg border border-gray-300 rounded-md mr-5"
+                                            className="p-1 text-lg border border-gray-300 rounded-md mr-5 border-b-2 border-t-0 border-r-0"
                                         />
                                         <button
                                             onClick={handleAddColumn}
@@ -278,7 +283,7 @@ function Xlpopup() {
                                     </div>
                                 </div>
 
-                                <div className="flex justify-center mt-2 gap-4 border border-red-500">
+                                <div className="flex justify-center mt-2 gap-4 ">
                                     {Object.keys(excelData).map((sheetName) => (
                                         <button
                                             key={sheetName}
